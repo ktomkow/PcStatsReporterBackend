@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.Cont
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.AspNet.Integration.Tests", "tests\PcStatsReporterBackend.AspNet.Integration.Tests\PcStatsReporterBackend.AspNet.Integration.Tests.csproj", "{30C78184-5D65-4D67-A54C-7DC02A84D842}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.Reporter", "src\PcStatsReporterBackend.Reporter\PcStatsReporterBackend.Reporter.csproj", "{F8F3CAD2-184F-489B-B59B-CA42ACDAE8C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{30C78184-5D65-4D67-A54C-7DC02A84D842}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30C78184-5D65-4D67-A54C-7DC02A84D842}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30C78184-5D65-4D67-A54C-7DC02A84D842}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8F3CAD2-184F-489B-B59B-CA42ACDAE8C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F3CAD2-184F-489B-B59B-CA42ACDAE8C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F3CAD2-184F-489B-B59B-CA42ACDAE8C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F3CAD2-184F-489B-B59B-CA42ACDAE8C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4905CE28-B7F2-4E02-A3BD-60A59728D400} = {C88224AA-3F7B-4E49-A829-57D31EA131C4}
@@ -60,5 +66,6 @@ Global
 		{7F56EC37-DF03-4D9E-B9E0-F60BCED0426D} = {C88224AA-3F7B-4E49-A829-57D31EA131C4}
 		{F76C6E64-D326-4442-8D70-ED3600186EC7} = {C88224AA-3F7B-4E49-A829-57D31EA131C4}
 		{30C78184-5D65-4D67-A54C-7DC02A84D842} = {BC68455D-BA3E-4DAF-A431-AC3D4C4BF54F}
+		{F8F3CAD2-184F-489B-B59B-CA42ACDAE8C3} = {C88224AA-3F7B-4E49-A829-57D31EA131C4}
 	EndGlobalSection
 EndGlobal
