@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using PcStatsReporterBackend.Contracts;
 
 namespace PcStatsReporterBackend.AspNet.SignalR;
 
@@ -7,8 +8,13 @@ namespace PcStatsReporterBackend.AspNet.SignalR;
 /// </summary>
 public class MainHub : Hub
 {
-    public override Task OnConnectedAsync()
+    public override async Task OnConnectedAsync()
     {
-        return base.OnConnectedAsync();
+        ServerWelcome serverWelcome = new()
+        {
+            Message = "Hello"
+        };
+
+        await Clients.Caller.SendCoreAsync("greeting", new []{serverWelcome});
     }
 }

@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.Core
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.AspNet", "src\PcStatsReporterBackend.AspNet\PcStatsReporterBackend.AspNet.csproj", "{7F56EC37-DF03-4D9E-B9E0-F60BCED0426D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.Contracts", "src\PcStatsReporterBackend.Contracts\PcStatsReporterBackend.Contracts.csproj", "{F76C6E64-D326-4442-8D70-ED3600186EC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.AspNet.Integration.Tests", "tests\PcStatsReporterBackend.AspNet.Integration.Tests\PcStatsReporterBackend.AspNet.Integration.Tests.csproj", "{30C78184-5D65-4D67-A54C-7DC02A84D842}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,11 +44,21 @@ Global
 		{7F56EC37-DF03-4D9E-B9E0-F60BCED0426D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F56EC37-DF03-4D9E-B9E0-F60BCED0426D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F56EC37-DF03-4D9E-B9E0-F60BCED0426D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F76C6E64-D326-4442-8D70-ED3600186EC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F76C6E64-D326-4442-8D70-ED3600186EC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F76C6E64-D326-4442-8D70-ED3600186EC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F76C6E64-D326-4442-8D70-ED3600186EC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30C78184-5D65-4D67-A54C-7DC02A84D842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30C78184-5D65-4D67-A54C-7DC02A84D842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30C78184-5D65-4D67-A54C-7DC02A84D842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30C78184-5D65-4D67-A54C-7DC02A84D842}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4905CE28-B7F2-4E02-A3BD-60A59728D400} = {C88224AA-3F7B-4E49-A829-57D31EA131C4}
 		{FA86B114-9FB5-4188-A692-85DA66861778} = {C88224AA-3F7B-4E49-A829-57D31EA131C4}
 		{6F009E25-814B-4D36-94C2-409B2D8E9C8A} = {BC68455D-BA3E-4DAF-A431-AC3D4C4BF54F}
 		{7F56EC37-DF03-4D9E-B9E0-F60BCED0426D} = {C88224AA-3F7B-4E49-A829-57D31EA131C4}
+		{F76C6E64-D326-4442-8D70-ED3600186EC7} = {C88224AA-3F7B-4E49-A829-57D31EA131C4}
+		{30C78184-5D65-4D67-A54C-7DC02A84D842} = {BC68455D-BA3E-4DAF-A431-AC3D4C4BF54F}
 	EndGlobalSection
 EndGlobal
