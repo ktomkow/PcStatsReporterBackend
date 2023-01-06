@@ -37,7 +37,7 @@ public abstract class IntegrationTest : IClassFixture<TestsFixture<Startup>>
     {
         try
         {
-            await Task.Delay(timeSpan);
+            await Task.Delay(timeSpan, cancellationToken);
         }
         catch (Exception)
         {
