@@ -1,5 +1,9 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System.Reflection;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PcStatsReporterBackend.Reporter.Features.Hello;
+using PcStatsReporterBackend.Reporter.Features.HelloNotificationsSubscriber;
 
 namespace PcStatsReporterBackend.Reporter;
 
@@ -12,6 +16,11 @@ public class Program
             {
                 services.AddHostedService<HelloWorldService>();
 
+                services.AddMediatR(Assembly.GetExecutingAssembly());
+                services.AddTransient<HelloHandler>();
+                services.AddTransient<HelloNotificationOne>();
+                services.AddTransient<HelloNotificationTwo>();
+                
                 services.AddHttpClient();
             });
         
