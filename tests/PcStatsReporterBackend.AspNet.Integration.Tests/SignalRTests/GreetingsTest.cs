@@ -16,10 +16,12 @@ public class GreetingsTest : IntegrationTest
 
         Uri baseAddress = _fixture.Server.BaseAddress;
         var address = baseAddress + hubUri;
-        await using var connection = new HubConnectionBuilder().WithUrl(address, o => _fixture.Server.CreateHandler()).Build();
+        
+        // https://lurumad.github.io/integration-tests-in-aspnet-core-signalr
+        await using var connection = new HubConnectionBuilder()
+            .WithUrl(address, o => o.HttpMessageHandlerFactory = _ => _fixture.Server.CreateHandler())
+            .Build();
 
-
-        int a = 5;
         await connection.StartAsync();
     }
 }
