@@ -1,12 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.AspNetCore.SignalR.Client;
 
 namespace PcStatsReporterBackend.AspNet.Integration.Tests;
 
 [Collection(nameof(IntegrationTest))]
 public abstract class IntegrationTest : IClassFixture<TestsFixture<Startup>>
 {
+    private const string mainHubEndpoint = "main"; 
+    
     protected readonly TestsFixture<Startup> _fixture;
     protected readonly HttpClient _httpClient;
+    protected readonly HubConnection _mainHubConnection;
 
     public IntegrationTest(TestsFixture<Startup> fixture)
     {
@@ -19,5 +23,13 @@ public abstract class IntegrationTest : IClassFixture<TestsFixture<Startup>>
         };
 
         _httpClient = fixture.CreateClient(webAppFactoryClientOptions);
+        
+        Uri baseAddress = _fixture.Server.BaseAddress;
+        string address = baseAddress + mainHubEndpoint;
+        
+        // https://lurumad.github.io/integration-tests-in-aspnet-core-signalr
+        _mainHubConnection = new HubConnectionBuilder()
+            .WithUrl(address, o => o.HttpMessageHandlerFactory = _ => _fixture.Server.CreateHandler())
+            .Build();
     }
 }
