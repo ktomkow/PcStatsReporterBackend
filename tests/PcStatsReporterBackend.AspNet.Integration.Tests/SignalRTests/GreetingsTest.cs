@@ -30,6 +30,8 @@ public class GreetingsTest : IntegrationTest
 
         await mainHubConnection.StartAsync();
 
+        await Task.Delay(TimeSpan.FromSeconds(1));
+
         response.Should().NotBeNull();
         response.Message.Should().Be("Hello");
     }
