@@ -22,15 +22,19 @@ public class GreetingsTest : IntegrationTest
     {
         var mainHubConnection = _mainHubConnection;
         ServerWelcome response = new ();
+
+        CancellationTokenSource cts = new CancellationTokenSource();
+        var token = cts.Token;
         
         mainHubConnection.On<ServerWelcome>("greeting", (serverWelcome) =>
         {
             response = serverWelcome;
+            cts.Cancel();
         });
 
         await mainHubConnection.StartAsync();
 
-        await Task.Delay(TimeSpan.FromSeconds(1));
+        await Delay(30, token);
 
         response.Should().NotBeNull();
         response.Message.Should().Be("Hello");

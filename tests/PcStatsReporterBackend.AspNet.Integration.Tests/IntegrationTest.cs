@@ -32,4 +32,21 @@ public abstract class IntegrationTest : IClassFixture<TestsFixture<Startup>>
             .WithUrl(address, o => o.HttpMessageHandlerFactory = _ => _fixture.Server.CreateHandler())
             .Build();
     }
+
+    protected async Task Delay(TimeSpan timeSpan, CancellationToken cancellationToken)
+    {
+        try
+        {
+            await Task.Delay(timeSpan);
+        }
+        catch (Exception)
+        {
+            // ignored
+        }
+    }
+
+    protected async Task Delay(uint seconds, CancellationToken token)
+    {
+        await Delay(TimeSpan.FromSeconds(seconds), token);
+    }
 }
