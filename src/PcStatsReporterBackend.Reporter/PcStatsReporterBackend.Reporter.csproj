@@ -5,15 +5,18 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <ApplicationManifest>app.manifest</ApplicationManifest>
+<!--         Needed to run with admin privileges -->
+<!--        <ApplicationManifest>app.manifest</ApplicationManifest> -->
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\PcStatsReporterBackend.Contracts\PcStatsReporterBackend.Contracts.csproj" />
       <ProjectReference Include="..\PcStatsReporterBackend.Core\PcStatsReporterBackend.Core.csproj" />
       <ProjectReference Include="..\PcStatsReporterBackend.LibreHardware\PcStatsReporterBackend.LibreHardware.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="6.0.12" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />

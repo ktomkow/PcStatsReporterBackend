@@ -11,9 +11,6 @@ public class Program
             .ConfigureServices(services =>
             {
                 services.AddHostedService<HelloWorldService>();
-                services.AddHostedService<HelloWorldService>();
-                services.AddHostedService<HelloWorldService>();
-                services.AddHostedService<HelloWorldService>();
 
                 services.AddHttpClient();
             });
