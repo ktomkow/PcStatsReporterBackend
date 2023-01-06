@@ -14,10 +14,20 @@ public class HelloWorldService : IHostedService
     
     public async Task StartAsync(CancellationToken cancellationToken)
     {
-        while (true)
+        try
         {
-            _logger.LogInformation("Hello");
-            await Task.Delay(TimeSpan.FromSeconds(10));
+            await Task.Run(async () =>
+            {
+                while (true)
+                {
+                    _logger.LogInformation("Hello");
+                    await Task.Delay(TimeSpan.FromSeconds(10), cancellationToken);
+                }
+            }, cancellationToken);
+        }
+        catch (OperationCanceledException)
+        {
+            _logger.LogWarning("Application is shutting down..");
         }
     }
 

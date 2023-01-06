@@ -11,12 +11,15 @@ public class Program
             .ConfigureServices(services =>
             {
                 services.AddHostedService<HelloWorldService>();
+                services.AddHostedService<HelloWorldService>();
+                services.AddHostedService<HelloWorldService>();
+                services.AddHostedService<HelloWorldService>();
 
                 services.AddHttpClient();
             });
         
         await hostBuilder.RunConsoleAsync();
-            
+
         return Environment.ExitCode;
     }
 }
