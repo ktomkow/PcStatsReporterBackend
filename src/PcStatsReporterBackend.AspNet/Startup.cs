@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Microsoft.OpenApi.Models;
+using PcStatsReporterBackend.AspNet.SignalR;
 
 namespace PcStatsReporterBackend.AspNet;
 
@@ -32,6 +33,8 @@ public class Startup
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
             c.IncludeXmlComments(xmlPath);
         });
+        
+        services.AddMySignalR();
     }
 
     public void Configure(IApplicationBuilder app)
@@ -42,7 +45,7 @@ public class Startup
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Pc Stats Reporter API V1");
                 c.RoutePrefix = "swagger";
             });
         }
@@ -51,6 +54,7 @@ public class Startup
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();
+            endpoints.MapMySignalR();
         });
     }
 }
