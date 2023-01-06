@@ -7,6 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C88224AA-3F7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.Core", "src\PcStatsReporterBackend.Core\PcStatsReporterBackend.Core.csproj", "{4905CE28-B7F2-4E02-A3BD-60A59728D400}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.LibreHardware", "src\PcStatsReporterBackend.LibreHardware\PcStatsReporterBackend.LibreHardware.csproj", "{FA86B114-9FB5-4188-A692-85DA66861778}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BC68455D-BA3E-4DAF-A431-AC3D4C4BF54F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.Core.Unit.Tests", "tests\PcStatsReporterBackend.Core.Unit.Tests\PcStatsReporterBackend.Core.Unit.Tests.csproj", "{6F009E25-814B-4D36-94C2-409B2D8E9C8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +26,18 @@ Global
 		{4905CE28-B7F2-4E02-A3BD-60A59728D400}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4905CE28-B7F2-4E02-A3BD-60A59728D400}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4905CE28-B7F2-4E02-A3BD-60A59728D400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA86B114-9FB5-4188-A692-85DA66861778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA86B114-9FB5-4188-A692-85DA66861778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA86B114-9FB5-4188-A692-85DA66861778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA86B114-9FB5-4188-A692-85DA66861778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F009E25-814B-4D36-94C2-409B2D8E9C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F009E25-814B-4D36-94C2-409B2D8E9C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F009E25-814B-4D36-94C2-409B2D8E9C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F009E25-814B-4D36-94C2-409B2D8E9C8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4905CE28-B7F2-4E02-A3BD-60A59728D400} = {C88224AA-3F7B-4E49-A829-57D31EA131C4}
+		{FA86B114-9FB5-4188-A692-85DA66861778} = {C88224AA-3F7B-4E49-A829-57D31EA131C4}
+		{6F009E25-814B-4D36-94C2-409B2D8E9C8A} = {BC68455D-BA3E-4DAF-A431-AC3D4C4BF54F}
 	EndGlobalSection
 EndGlobal
