@@ -1,27 +1,25 @@
-﻿using Microsoft.AspNetCore.SignalR.Client;
-
-namespace PcStatsReporterBackend.AspNet.Integration.Tests.SignalRTests;
+﻿namespace PcStatsReporterBackend.AspNet.Integration.Tests.SignalRTests;
 
 public class GreetingsTest : IntegrationTest
 {
     public GreetingsTest(TestsFixture<Startup> fixture) : base(fixture)
     {
+    }
 
+    [Fact]
+    public async Task StartConnection_ShouldWork()
+    {
+        var mainHubConnection = _mainHubConnection;
+
+        await mainHubConnection.StartAsync();
     }
     
+    
     [Fact]
-    public async Task Test()
+    public async Task StartConnection_ShouldWork2()
     {
-        var hubUri = "main";
+        var mainHubConnection = _mainHubConnection;
 
-        Uri baseAddress = _fixture.Server.BaseAddress;
-        var address = baseAddress + hubUri;
-        
-        // https://lurumad.github.io/integration-tests-in-aspnet-core-signalr
-        await using var connection = new HubConnectionBuilder()
-            .WithUrl(address, o => o.HttpMessageHandlerFactory = _ => _fixture.Server.CreateHandler())
-            .Build();
-
-        await connection.StartAsync();
+        await mainHubConnection.StartAsync();
     }
 }
