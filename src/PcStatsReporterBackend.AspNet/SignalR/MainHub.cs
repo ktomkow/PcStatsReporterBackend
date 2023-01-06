@@ -15,6 +15,6 @@ public class MainHub : Hub
             Message = "Hello"
         };
 
-        await Clients.Caller.SendCoreAsync("greeting", new []{serverWelcome});
+        await Clients.Caller.SendCoreAsync("greeting", new object?[]{serverWelcome});
     }
 }
