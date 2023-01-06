@@ -11,6 +11,8 @@ public abstract class IntegrationTest : IClassFixture<TestsFixture<Startup>>
     protected readonly TestsFixture<Startup> _fixture;
     protected readonly HttpClient _httpClient;
     protected readonly HubConnection _mainHubConnection;
+    protected readonly CancellationTokenSource _delayTokenSource;
+    private CancellationToken _delayToken => _delayTokenSource.Token;
 
     public IntegrationTest(TestsFixture<Startup> fixture)
     {
@@ -31,13 +33,15 @@ public abstract class IntegrationTest : IClassFixture<TestsFixture<Startup>>
         _mainHubConnection = new HubConnectionBuilder()
             .WithUrl(address, o => o.HttpMessageHandlerFactory = _ => _fixture.Server.CreateHandler())
             .Build();
+        
+        _delayTokenSource = new CancellationTokenSource();
     }
 
-    protected async Task Delay(TimeSpan timeSpan, CancellationToken cancellationToken)
+    private async Task Delay(TimeSpan timeSpan)
     {
         try
         {
-            await Task.Delay(timeSpan, cancellationToken);
+            await Task.Delay(timeSpan, _delayToken);
         }
         catch (Exception)
         {
@@ -45,8 +49,8 @@ public abstract class IntegrationTest : IClassFixture<TestsFixture<Startup>>
         }
     }
 
-    protected async Task Delay(uint seconds, CancellationToken token)
+    protected async Task Delay(uint seconds)
     {
-        await Delay(TimeSpan.FromSeconds(seconds), token);
+        await Delay(TimeSpan.FromSeconds(seconds));
     }
 }
