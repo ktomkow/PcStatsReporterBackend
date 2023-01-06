@@ -17,6 +17,6 @@ public class GreetingsTest : IntegrationTest
 
         await using var connection = new HubConnectionBuilder().WithUrl(_fixture.Server.BaseAddress + "/main").Build();
 
-        // await connection.StartAsync();
+        await connection.StartAsync();
     }
 }
