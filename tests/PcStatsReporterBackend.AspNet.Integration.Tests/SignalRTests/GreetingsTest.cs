@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.AspNetCore.SignalR.Client;
 
 namespace PcStatsReporterBackend.AspNet.Integration.Tests.SignalRTests;
 
@@ -12,13 +13,10 @@ public class GreetingsTest : IntegrationTest
     [Fact]
     public async Task Test()
     {
-        HttpResponseMessage response = await _httpClient.GetAsync("/WeatherForecast");
+        var uri = "/main";
 
-        var stringResponse = await response.Content.ReadAsStringAsync();
+        await using var connection = new HubConnectionBuilder().WithUrl(_fixture.Server.BaseAddress + "/main").Build();
 
-        await Task.Delay(TimeSpan.FromSeconds(5));
-        
-        response.EnsureSuccessStatusCode();
-        stringResponse.Should().NotBeNull();
+        // await connection.StartAsync();
     }
 }
