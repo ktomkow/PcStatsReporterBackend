@@ -6,7 +6,7 @@ namespace PcStatsReporterBackend.AspNet.Integration.Tests;
 [Collection(nameof(IntegrationTest))]
 public abstract class IntegrationTest : IClassFixture<TestsFixture<Startup>>
 {
-    private const string mainHubEndpoint = "main"; 
+    private const string MainHubEndpoint = "main"; 
     
     protected readonly TestsFixture<Startup> _fixture;
     protected readonly HttpClient _httpClient;
@@ -27,7 +27,7 @@ public abstract class IntegrationTest : IClassFixture<TestsFixture<Startup>>
         _httpClient = fixture.CreateClient(webAppFactoryClientOptions);
         
         Uri baseAddress = _fixture.Server.BaseAddress;
-        string address = baseAddress + mainHubEndpoint;
+        string address = baseAddress + MainHubEndpoint;
         
         // https://lurumad.github.io/integration-tests-in-aspnet-core-signalr
         _mainHubConnection = new HubConnectionBuilder()
