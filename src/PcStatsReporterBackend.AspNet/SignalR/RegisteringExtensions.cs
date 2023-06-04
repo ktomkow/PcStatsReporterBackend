@@ -10,5 +10,6 @@ public static class RegisteringExtensions
     public static void MapMySignalR(this IEndpointRouteBuilder endpoints)
     {
         endpoints.MapHub<MainHub>("/main");
+        endpoints.MapHub<ReporterHub>("/reporter");
     }
 }

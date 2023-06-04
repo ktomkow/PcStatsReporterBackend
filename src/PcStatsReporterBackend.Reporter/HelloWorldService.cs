@@ -25,7 +25,7 @@ public class HelloWorldService : IHostedService
             {
                 while (true)
                 {
-                    var talkToServerRequest = new HelloRequest() { Hub = "main" };
+                    var talkToServerRequest = new HelloRequest() { Hub = "reporter" };
                     var response = await _mediator.Send(talkToServerRequest, cancellationToken);
                     var helloNotification = new HelloNotification()
                     {
