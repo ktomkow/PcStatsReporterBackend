@@ -15,6 +15,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\PcStatsReporterBackend.Contracts\PcStatsReporterBackend.Contracts.csproj" />
+      <ProjectReference Include="..\PcStatsReporterBackend.Core\PcStatsReporterBackend.Core.csproj" />
     </ItemGroup>
 
 </Project>
