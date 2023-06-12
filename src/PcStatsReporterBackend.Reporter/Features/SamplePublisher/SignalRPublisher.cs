@@ -25,7 +25,7 @@ public class SignalRPublisher : INotificationHandler<SampleNotification>
             
             var transportMessage = new TransportMessage()
             {
-                Type = notification.Sample.GetType().Name,
+                Type = notification.Sample.GetType().FullName,
                 Payload = JsonConvert.SerializeObject(notification.Sample)
             };
 

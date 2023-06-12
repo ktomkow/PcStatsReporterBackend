@@ -1,7 +1,9 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using PcStatsReporterBackend.AspNet.SignalR;
 using PcStatsReporterBackend.Core;
 using PcStatsReporterBackend.Reporter;
 using PcStatsReporterBackend.Reporter.Features.SamplePublisher;
