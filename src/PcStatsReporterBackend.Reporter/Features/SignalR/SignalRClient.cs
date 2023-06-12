@@ -11,14 +11,12 @@ public class SignalRClient
     private readonly SemaphoreSlim _mutex;
     private readonly HubConnection _hubConnection;
 
-    public SignalRClient(ILogger<SignalRPublisher> logger)
+    public SignalRClient(ILogger<SignalRPublisher> logger, IHaveHubConnections hubConnections)
     {
         _logger = logger;
         _mutex = new SemaphoreSlim(1, 1);
-        
-        _hubConnection = new HubConnectionBuilder()
-            .WithUrl("http://localhost:7000/reporter")
-            .Build();
+
+        _hubConnection = hubConnections.GetReporterConnection();
 
         _hubConnection.Closed += async (Exception? e) =>
         {

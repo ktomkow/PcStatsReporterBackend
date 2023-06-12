@@ -7,10 +7,12 @@ namespace PcStatsReporterBackend.AspNet.Integration.Tests;
 public abstract class IntegrationTest : IClassFixture<TestsFixture<Startup>>
 {
     private const string MainHubEndpoint = "main"; 
+    private const string ReporterHubEndpoint = "reporter"; 
     
     protected readonly TestsFixture<Startup> _fixture;
     protected readonly HttpClient _httpClient;
     protected readonly HubConnection _mainHubConnection;
+    protected readonly HubConnection _reporterHubConnection;
     protected readonly CancellationTokenSource _delayTokenSource;
     private CancellationToken _delayToken => _delayTokenSource.Token;
 
@@ -27,11 +29,16 @@ public abstract class IntegrationTest : IClassFixture<TestsFixture<Startup>>
         _httpClient = fixture.CreateClient(webAppFactoryClientOptions);
         
         Uri baseAddress = _fixture.Server.BaseAddress;
-        string address = baseAddress + MainHubEndpoint;
+        string mainAddress = baseAddress + MainHubEndpoint;
+        string reporterAddress = baseAddress + ReporterHubEndpoint;
         
         // https://lurumad.github.io/integration-tests-in-aspnet-core-signalr
         _mainHubConnection = new HubConnectionBuilder()
-            .WithUrl(address, o => o.HttpMessageHandlerFactory = _ => _fixture.Server.CreateHandler())
+            .WithUrl(mainAddress, o => o.HttpMessageHandlerFactory = _ => _fixture.Server.CreateHandler())
+            .Build();        
+        
+        _reporterHubConnection = new HubConnectionBuilder()
+            .WithUrl(reporterAddress, o => o.HttpMessageHandlerFactory = _ => _fixture.Server.CreateHandler())
             .Build();
         
         _delayTokenSource = new CancellationTokenSource();

@@ -30,6 +30,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\src\PcStatsReporterBackend.AspNet\PcStatsReporterBackend.AspNet.csproj" />
       <ProjectReference Include="..\..\src\PcStatsReporterBackend.Contracts\PcStatsReporterBackend.Contracts.csproj" />
+      <ProjectReference Include="..\..\src\PcStatsReporterBackend.Reporter\PcStatsReporterBackend.Reporter.csproj" />
     </ItemGroup>
 
 </Project>
