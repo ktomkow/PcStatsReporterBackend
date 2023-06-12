@@ -6,6 +6,8 @@
         <Nullable>enable</Nullable>
 
         <IsPackable>false</IsPackable>
+
+        <RootNamespace>PcStatsReporterBackend.AspNet.Integration.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

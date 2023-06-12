@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.AspN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.Contracts", "src\PcStatsReporterBackend.Contracts\PcStatsReporterBackend.Contracts.csproj", "{F76C6E64-D326-4442-8D70-ED3600186EC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.AspNet.Integration.Tests", "tests\PcStatsReporterBackend.AspNet.Integration.Tests\PcStatsReporterBackend.AspNet.Integration.Tests.csproj", "{30C78184-5D65-4D67-A54C-7DC02A84D842}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.Integration.Tests", "tests\PcStatsReporterBackend.Integration.Tests\PcStatsReporterBackend.Integration.Tests.csproj", "{30C78184-5D65-4D67-A54C-7DC02A84D842}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcStatsReporterBackend.Reporter", "src\PcStatsReporterBackend.Reporter\PcStatsReporterBackend.Reporter.csproj", "{F8F3CAD2-184F-489B-B59B-CA42ACDAE8C3}"
 EndProject
