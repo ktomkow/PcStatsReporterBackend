@@ -2,8 +2,9 @@
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PcStatsReporterBackend.Reporter.Features.Hello;
-using PcStatsReporterBackend.Reporter.Features.HelloNotificationsSubscriber;
+using PcStatsReporterBackend.Core;
+using PcStatsReporterBackend.LibreHardware;
+using PcStatsReporterBackend.Reporter.Features.SignalR;
 
 namespace PcStatsReporterBackend.Reporter;
 
@@ -14,12 +15,15 @@ public class Program
         var hostBuilder = Host.CreateDefaultBuilder()
             .ConfigureServices(services =>
             {
-                services.AddHostedService<HelloWorldService>();
+                // services.AddHostedService<HelloWorldService>();
+                services.AddHostedService<CollectorService>();
 
                 services.AddMediatR(Assembly.GetExecutingAssembly());
-                services.AddTransient<HelloHandler>();
-                services.AddTransient<HelloNotificationOne>();
-                services.AddTransient<HelloNotificationTwo>();
+                // services.AddTransient<HelloHandler>();
+                // services.AddTransient<HelloNotificationOne>();
+                // services.AddTransient<HelloNotificationTwo>();
+                services.AddSingleton<SignalRClient>();
+                services.AddSingleton<ICollector<CpuSample>, CpuCollector>();
                 
                 services.AddHttpClient();
             });

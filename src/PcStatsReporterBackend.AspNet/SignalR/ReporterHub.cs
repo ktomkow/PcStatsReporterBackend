@@ -14,19 +14,17 @@ public class ReporterHub : Hub
     {
         _logger = logger;
     }
-
-    public override async Task OnConnectedAsync()
+    
+    /// <summary>
+    /// Function to transfer samples
+    /// </summary>
+    public async Task TransferSample(TransportMessage transportMessage)
     {
-        ServerWelcome serverWelcome = new()
-        {
-            Message = "Hello"
-        };
+        var s = System.Text.Json.JsonSerializer.Serialize(transportMessage);
+        _logger.LogInformation(s);
+        
+        // System.Text.Json.JsonSerializer.Deserialize</**/>()
 
-        var userIdentifier = Context.UserIdentifier;
-        var connectionId = Context.ConnectionId;
-        
-        
-        _logger.LogInformation("User identifier: {Identifier}, connection identifier: {Connection}", userIdentifier, connectionId);
-        await Clients.Caller.SendCoreAsync("greeting", new object?[]{serverWelcome});
+        await Task.CompletedTask;
     }
 }
