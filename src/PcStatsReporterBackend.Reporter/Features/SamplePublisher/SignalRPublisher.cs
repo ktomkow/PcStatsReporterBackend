@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using PcStatsReporterBackend.Contracts;
+using PcStatsReporterBackend.Contracts.ToServer;
 using PcStatsReporterBackend.Reporter.Features.SignalR;
 
 namespace PcStatsReporterBackend.Reporter.Features.SamplePublisher;

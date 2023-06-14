@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Logging;
 using PcStatsReporterBackend.Contracts;
+using PcStatsReporterBackend.Contracts.ToServer;
 using PcStatsReporterBackend.Reporter.Features.SamplePublisher;
 
 namespace PcStatsReporterBackend.Reporter.Features.SignalR;
@@ -60,7 +61,7 @@ public class SignalRClient
         }
         catch (Exception e)
         {
-            _logger.LogError($"Error during SignalR publish: {e.Message}", e);
+            _logger.LogError("Error during transfer message {MessageId}: {Error}",transportMessage.Id, e);
         }
         finally
         {
