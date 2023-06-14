@@ -10,7 +10,7 @@ public class BasicTest : IntegrationTest
     public async Task Test()
     {
         string uri = "/WeatherForecast";
-        HttpResponseMessage response = await _httpClient.GetAsync(uri);
+        HttpResponseMessage response = await GetHttpClient().GetAsync(uri);
 
         var stringResponse = await response.Content.ReadAsStringAsync();
 

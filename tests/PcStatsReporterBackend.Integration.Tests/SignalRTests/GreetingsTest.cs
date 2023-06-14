@@ -12,7 +12,7 @@ public class GreetingsTest : IntegrationTest
     [Fact]
     public async Task StartConnection_ShouldWork()
     {
-        var mainHubConnection = _mainHubConnection;
+        var mainHubConnection = GetMainHubConnection();
 
         await mainHubConnection.StartAsync();
     }
@@ -20,7 +20,7 @@ public class GreetingsTest : IntegrationTest
     [Fact]
     public async Task StartConnection_WhenConnectionStarted_GreetingShouldBeExecutedOnClient()
     {
-        var mainHubConnection = _mainHubConnection;
+        var mainHubConnection = GetMainHubConnection();
         ServerWelcome response = new ();
         
         mainHubConnection.On<ServerWelcome>("greeting", (serverWelcome) =>

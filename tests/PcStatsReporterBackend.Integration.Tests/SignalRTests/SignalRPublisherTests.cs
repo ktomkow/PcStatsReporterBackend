@@ -21,7 +21,7 @@ public class SignalRPublisherTests: IntegrationTest
     [Fact]
     public async Task Start_Yeah_Yeah()
     {
-        var testServices = new TestServices(_reporterHubConnection);
+        var testServices = new TestServices(GetReporterHubConnection());
         var hostBuilder = BasicReporter.CreateHostBuilder(testServices);
         
         var host = hostBuilder.Build();
