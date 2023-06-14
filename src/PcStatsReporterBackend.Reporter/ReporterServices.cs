@@ -36,7 +36,7 @@ public class ReporterServices
     {
         public HubConnection GetReporterConnection()
         {
-            return new HubConnectionBuilder().WithUrl("http://localhost:7000").Build();
+            return new HubConnectionBuilder().WithUrl("http://localhost:7000/reporter").Build();
         }
     }
 }
