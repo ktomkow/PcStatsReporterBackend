@@ -73,8 +73,8 @@ public class SignalRPublisherTests: IntegrationTest
 
         var cpuSample = new CpuSample()
         {
-            Id = Guid.Parse("00203459-cfd9-4d28-a83c-6b5dc5c6e28c"),
-            RegisteredAt = new DateTime(2020, 1, 3, 10, 33, 22),
+            Id = Guid.Parse("52eced11-2409-42c2-b463-b9ee1c55d8e5"),
+            RegisteredAt = new DateTime(2023, 12, 30, 6, 1, 37),
             Temperature = 35
         };
 
