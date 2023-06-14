@@ -21,7 +21,7 @@ public class SignalRClient
 
         _hubConnection.Closed += async (Exception? e) =>
         {
-            _logger.LogError("Hub connection closed!", e);
+            _logger.LogError("Hub connection closed! Error: {Error}", e);
             await Task.CompletedTask;
         };
     }
@@ -40,7 +40,8 @@ public class SignalRClient
         }
         catch (Exception e)
         {
-            _logger.LogError("Error during SignalR initialization", e);
+            _logger.LogError("Error during SignalR initialization: {Error}", e);
+            throw;
         }
     }
 

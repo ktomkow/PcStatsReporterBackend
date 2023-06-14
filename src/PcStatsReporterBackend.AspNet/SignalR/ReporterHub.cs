@@ -45,6 +45,8 @@ public class ReporterHub : Hub
 
         if (sample is not null)
         {
+            _logger.LogInformation("Temperature: {Temperature}", sample.Temperature);
+
             await Clients.Caller.SendAsync(OnSampleReceived,
                 new SampleConfirmation() { MessageId = transportMessage.Id});
             

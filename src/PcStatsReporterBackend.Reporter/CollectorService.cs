@@ -38,7 +38,7 @@ public class CollectorService : IHostedService
                     };
                         
                     await _mediator.Publish(sampleNotification, cancellationToken);
-                    await Task.Delay(TimeSpan.FromSeconds(10), cancellationToken);
+                    await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
                 }
             }, cancellationToken);
         }
